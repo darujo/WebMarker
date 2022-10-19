@@ -11,18 +11,16 @@ import java.util.Random;
 @WebServlet(name = "GetListProduct", urlPatterns = "/get_list_product_servlet")
 public class GetListProduct extends HttpServlet {
     Product [] products;
+
     @Override
-    public void init()  {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+        // по заданию это должно быть тут
         Random random = new Random();
         products = new Product[10];
         for (int i = 0; i < 10; i++) {
             products[i] = new Product(i,"Product_" + i,random.nextFloat() * 1000  );
 
         }
-    }
-
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         for (Product product : products) {
             resp.getWriter().printf("<p1>%s</p1>", product.toString());
         }

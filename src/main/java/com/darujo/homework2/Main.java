@@ -27,6 +27,7 @@ public class Main {
             System.out.println(cart);
             ProductService productService = context.getBean(ProductService.class);
             System.out.println(productService.createNewOrder());
+            System.out.println(productRepository.getProducts());
         }
     }
 }

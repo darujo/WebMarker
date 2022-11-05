@@ -8,7 +8,7 @@ import java.util.List;
 
 @Component
 public class ProductRepository {
-    List<Product> products;
+    private final List<Product> products;
 
     public ProductRepository() {
         products = new ArrayList<>();
@@ -33,7 +33,7 @@ public class ProductRepository {
 
     @Override
     public String toString() {
-        return super.toString() + "\n" + products.toString();
+        return super.toString() + "\n" + products;
     }
 
 }
